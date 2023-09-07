@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("btnBuscar");
-  const divContainer = document.getElementsByClassName("container");
   const cont = document.getElementById("contenedor");
   const userInput = document.getElementById("inputBuscar");
 
   button.addEventListener("click", function () {
+    
     cont.innerHTML = "";
     let x = userInput.value;
     const url = `https://images-api.nasa.gov/search?q=${x}`;
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        
+
         data.collection.items.forEach((item) => {
           const element = item.data[0];
 
