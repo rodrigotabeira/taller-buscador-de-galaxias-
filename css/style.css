@@ -2,7 +2,7 @@
     min-height: calc(100vh - 160px);
   }
 
-#boxes {
+#contenedor {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 18px;
@@ -10,13 +10,18 @@
   max-width: 1200px;
 }
 
+textarea {
+  width: 100%;
+}
+
 .prueba {
-  border: red 2px solid;
+  border: rgb(147, 147, 147) 2px solid;
   width: 400px;
   padding: 10px;
 }
 .prueba img {
-  width: 380px;
+  width: 376px;
+  height: 220px;
   display: block;
   margin: auto;
 }
