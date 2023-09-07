@@ -1,3 +1,22 @@
-main {
+  main {
     min-height: calc(100vh - 160px);
   }
+
+#boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin: 20px auto; 
+  max-width: 1200px;
+}
+
+.prueba {
+  border: red 2px solid;
+  width: 400px;
+  padding: 10px;
+}
+.prueba img {
+  width: 380px;
+  display: block;
+  margin: auto;
+}
