@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           divCon.classList.add("prueba");
           cont.appendChild(divCon);
 
-          const name = document.createElement("p"); // Crea un div para cada elemento
+          const name = document.createElement("p"); // Crea un parrafo para el nombre
           divCon.appendChild(name);
           name.textContent = element.title;
 
