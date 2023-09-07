@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const userInput = document.getElementById("inputBuscar");
 
   button.addEventListener("click", function () {
-
+    
     cont.innerHTML = "";
     let x = userInput.value;
     const url = `https://images-api.nasa.gov/search?q=${x}`;
@@ -13,28 +13,25 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
 
-        data.collection.items.forEach((item) => { // Recorremos cada elemento de data.collection.items
-          const element = item.data[0]; // accedemos al primer elemento del objeto coleccion y accedemos al primer item
+        data.collection.items.forEach((item) => {
+          const element = item.data[0];
 
-          const divCon = document.createElement("div"); // Crea un div para cada elemento
+          const divCon = document.createElement("div");
           divCon.classList.add("prueba");
           cont.appendChild(divCon);
 
-          const name = document.createElement("p"); // Crea un div para cada elemento
-          divCon.appendChild(name);
-          name.textContent = element.title;
+          const images = document.createElement("img");
+          images.src = item.links[0].href;
+          divCon.appendChild(images);
 
-          const description = document.createElement("p"); // Crea parrafo para la descripcion y la fecha
-          description.textContent = element.description;
+          const description = document.createElement("textarea");
+          description.textContent = `${element.title}\n${element.description}`;
           divCon.appendChild(description);
 
           const date = document.createElement("p");
           date.textContent = element.date_created;
           divCon.appendChild(date);
 
-          const images = document.createElement("img"); // Crea imagen
-          images.src = item.links[0].href;
-          divCon.appendChild(images);
         });
       })
       .catch((error) => {
